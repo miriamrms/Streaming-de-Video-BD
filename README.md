@@ -62,7 +62,7 @@ O modelo lógico converte o modelo conceitual em tabelas relacionais.
     - Mapeamento de entidades associativas
 
     - Mapeamento de relacionamentos e seus atributos
-      -  Adição de chave estrangeira
+      - Adição de chave estrangeira
       - Criação de relação
 
 
