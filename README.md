@@ -58,7 +58,7 @@ O modelo lógico converte o modelo conceitual em tabelas relacionais.
 
 ## 💻 Consultas SQL
 
-As consultas SQL serão utilizadas para manipulação e extração de dados.
+As consultas SQL se  rão utilizadas para manipulação e extração de dados.
 
 ### Consultas implementadas
 - `Group by/Having`
