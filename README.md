@@ -53,6 +53,19 @@ O modelo lógico converte o modelo conceitual em tabelas relacionais.
   <summary>Recursos Utilizados no Modelo Lógico</summary>
 
   <br>
+  
+    - Mapeamento de entidades regulares e seus atributos
+    - Mapeamento de entidades fracas e seus atributos
+    - Mapeamento de super/subentidades e seus atributos
+      - Uma relação para cada entidade da herança
+      - Uma única relação para toda herança disjunta ou direta
+    - Mapeamento de entidades associativas
+
+    - Mapeamento de relacionamentos e seus atributos
+      -  Adição de chave estrangeira
+      - Criação de relação
+
+
 
 </details>
 
