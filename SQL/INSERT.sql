@@ -62,17 +62,32 @@ INSERT INTO GERENCIA (EMAIL, NOME_ADULTO, NOME_INFANTIL) VALUES ('marcos.silva@e
 -- 2.6. CONTEUDO
 -- ==========================================
 -- Filmes Iniciais
-INSERT INTO CONTEUDO (ID, TITULO, DESCRICAO, CLASSIFICACAO) VALUES (1, 'O Resgate Final', 'Um mercenário em uma missão perigosa.', '16 Anos');
-INSERT INTO CONTEUDO (ID, TITULO, DESCRICAO, CLASSIFICACAO) VALUES (2, 'Vingadores do Espaço', 'Heróis salvam o universo.', '12 Anos');
+INSERT INTO CONTEUDO (ID, TITULO, DESCRICAO, CLASSIFICACAO, DATA_LANCAMENTO) 
+VALUES (1, 'O Resgate Final', 'Um mercenário em uma missão perigosa.', '16 Anos', TO_DATE('2023-05-15', 'YYYY-MM-DD'));
+
+INSERT INTO CONTEUDO (ID, TITULO, DESCRICAO, CLASSIFICACAO, DATA_LANCAMENTO) 
+VALUES (2, 'Vingadores do Espaço', 'Heróis salvam o universo.', '12 Anos', TO_DATE('2022-11-20', 'YYYY-MM-DD'));
+
 -- Séries Iniciais
-INSERT INTO CONTEUDO (ID, TITULO, DESCRICAO, CLASSIFICACAO) VALUES (3, 'Coisas Estranhas', 'Crianças enfrentam monstros.', '14 Anos');
-INSERT INTO CONTEUDO (ID, TITULO, DESCRICAO, CLASSIFICACAO) VALUES (4, 'Aventuras do Juca', 'Desenho educativo para crianças.', 'Livre');
+INSERT INTO CONTEUDO (ID, TITULO, DESCRICAO, CLASSIFICACAO, DATA_LANCAMENTO) 
+VALUES (3, 'Coisas Estranhas', 'Crianças enfrentam monstros.', '14 Anos', TO_DATE('2023-07-01', 'YYYY-MM-DD'));
+
+INSERT INTO CONTEUDO (ID, TITULO, DESCRICAO, CLASSIFICACAO, DATA_LANCAMENTO) 
+VALUES (4, 'Aventuras do Juca', 'Desenho educativo para crianças.', 'Livre', TO_DATE('2021-10-12', 'YYYY-MM-DD'));
+
 -- Novos Filmes Adicionados
-INSERT INTO CONTEUDO (ID, TITULO, DESCRICAO, CLASSIFICACAO) VALUES (5, 'A Última Missão', 'Agente secreto tenta impedir desastre.', '14 Anos');
-INSERT INTO CONTEUDO (ID, TITULO, DESCRICAO, CLASSIFICACAO) VALUES (6, 'Rindo à Toa', 'Comédia sobre férias em família.', 'Livre');
+INSERT INTO CONTEUDO (ID, TITULO, DESCRICAO, CLASSIFICACAO, DATA_LANCAMENTO) 
+VALUES (5, 'A Última Missão', 'Agente secreto tenta impedir desastre.', '14 Anos', TO_DATE('2024-01-15', 'YYYY-MM-DD'));
+
+INSERT INTO CONTEUDO (ID, TITULO, DESCRICAO, CLASSIFICACAO, DATA_LANCAMENTO) 
+VALUES (6, 'Rindo à Toa', 'Comédia sobre férias em família.', 'Livre', TO_DATE('2023-12-25', 'YYYY-MM-DD'));
+
 -- Novas Séries Adicionadas
-INSERT INTO CONTEUDO (ID, TITULO, DESCRICAO, CLASSIFICACAO) VALUES (7, 'Dinastia de Fogo', 'Guerra entre clãs por poder.', '18 Anos');
-INSERT INTO CONTEUDO (ID, TITULO, DESCRICAO, CLASSIFICACAO) VALUES (8, 'Rua do Medo', 'Misterios sobrenaturais na cidade.', '16 Anos');
+INSERT INTO CONTEUDO (ID, TITULO, DESCRICAO, CLASSIFICACAO, DATA_LANCAMENTO) 
+VALUES (7, 'Dinastia de Fogo', 'Guerra entre clãs por poder.', '18 Anos', TO_DATE('2024-02-10', 'YYYY-MM-DD'));
+
+INSERT INTO CONTEUDO (ID, TITULO, DESCRICAO, CLASSIFICACAO, DATA_LANCAMENTO) 
+VALUES (8, 'Rua do Medo', 'Misterios sobrenaturais na cidade.', '16 Anos', TO_DATE('2024-04-05', 'YYYY-MM-DD'));
 
 -- ==========================================
 -- 2.7. CATEGORIAS
@@ -128,27 +143,30 @@ INSERT INTO SERIE (ID_CONTEUDO) VALUES (8);
 -- ==========================================
 -- 2.11. EPISODIO
 -- ==========================================
--- Série 3 (Coisas Estranhas)
-INSERT INTO EPISODIO (ID, TITULO, DESCRICAO, TEMPORADA, ID_SERIE, ID_VIDEO) 
-VALUES (1001, 'O Desaparecimento', 'Um garoto some misteriosamente.', 1, 3, 201);
-INSERT INTO EPISODIO (ID, TITULO, DESCRICAO, TEMPORADA, ID_SERIE, ID_VIDEO) 
-VALUES (1002, 'A Estranha', 'Uma garota com poderes aparece.', 1, 3, 202);
+-- Série 3 (Coisas Estranhas) - Lançamento semanal
+INSERT INTO EPISODIO (ID, TITULO, DESCRICAO, TEMPORADA, DATA_LANCAMENTO, ID_SERIE, ID_VIDEO) 
+VALUES (1001, 'O Desaparecimento', 'Um garoto some misteriosamente.', 1, TO_DATE('2023-07-01', 'YYYY-MM-DD'), 3, 201);
+
+INSERT INTO EPISODIO (ID, TITULO, DESCRICAO, TEMPORADA, DATA_LANCAMENTO, ID_SERIE, ID_VIDEO) 
+VALUES (1002, 'A Estranha', 'Uma garota com poderes aparece.', 1, TO_DATE('2023-07-08', 'YYYY-MM-DD'), 3, 202);
 
 -- Série 4 (Aventuras do Juca)
-INSERT INTO EPISODIO (ID, TITULO, DESCRICAO, TEMPORADA, ID_SERIE, ID_VIDEO) 
-VALUES (1003, 'Brincando no Parque', 'Juca e seus amigos vão ao parque.', 1, 4, 203);
+INSERT INTO EPISODIO (ID, TITULO, DESCRICAO, TEMPORADA, DATA_LANCAMENTO, ID_SERIE, ID_VIDEO) 
+VALUES (1003, 'Brincando no Parque', 'Juca e seus amigos vão ao parque.', 1, TO_DATE('2021-10-12', 'YYYY-MM-DD'), 4, 203);
 
--- Série 7 (Dinastia de Fogo)
-INSERT INTO EPISODIO (ID, TITULO, DESCRICAO, TEMPORADA, ID_SERIE, ID_VIDEO) 
-VALUES (1004, 'O Herdeiro', 'O rei anuncia seu sucessor.', 1, 7, 204);
-INSERT INTO EPISODIO (ID, TITULO, DESCRICAO, TEMPORADA, ID_SERIE, ID_VIDEO) 
-VALUES (1005, 'Traição', 'Alianças são quebradas.', 1, 7, 205);
+-- Série 7 (Dinastia de Fogo) - Lançamento semanal
+INSERT INTO EPISODIO (ID, TITULO, DESCRICAO, TEMPORADA, DATA_LANCAMENTO, ID_SERIE, ID_VIDEO) 
+VALUES (1004, 'O Herdeiro', 'O rei anuncia seu sucessor.', 1, TO_DATE('2024-02-10', 'YYYY-MM-DD'), 7, 204);
 
--- Série 8 (Rua do Medo)
-INSERT INTO EPISODIO (ID, TITULO, DESCRICAO, TEMPORADA, ID_SERIE, ID_VIDEO) 
-VALUES (1006, 'A Casa Nova', 'Eles se mudam para a casa amaldiçoada.', 1, 8, 206);
-INSERT INTO EPISODIO (ID, TITULO, DESCRICAO, TEMPORADA, ID_SERIE, ID_VIDEO) 
-VALUES (1007, 'Vozes no Porão', 'O perigo se aproxima.', 1, 8, 207);
+INSERT INTO EPISODIO (ID, TITULO, DESCRICAO, TEMPORADA, DATA_LANCAMENTO, ID_SERIE, ID_VIDEO) 
+VALUES (1005, 'Traição', 'Alianças são quebradas.', 1, TO_DATE('2024-02-17', 'YYYY-MM-DD'), 7, 205);
+
+-- Série 8 (Rua do Medo) - Lançamento semanal
+INSERT INTO EPISODIO (ID, TITULO, DESCRICAO, TEMPORADA, DATA_LANCAMENTO, ID_SERIE, ID_VIDEO) 
+VALUES (1006, 'A Casa Nova', 'Eles se mudam para a casa amaldiçoada.', 1, TO_DATE('2024-04-05', 'YYYY-MM-DD'), 8, 206);
+
+INSERT INTO EPISODIO (ID, TITULO, DESCRICAO, TEMPORADA, DATA_LANCAMENTO, ID_SERIE, ID_VIDEO) 
+VALUES (1007, 'Vozes no Porão', 'O perigo se aproxima.', 1, TO_DATE('2024-04-12', 'YYYY-MM-DD'), 8, 207);
 
 -- ==========================================
 -- 2.12. ARTISTA
