@@ -18,7 +18,10 @@ Construir um banco de dados relacional completo, documentando:
 
 O modelo conceitual representa a estrutura inicial do sistema através de entidades, atributos e relacionamentos.
 
-![Modelo Conceitual](Projeto-Conceitual/diagrama.png)
+<p align="center">
+  <img src="Projeto-Conceitual/diagrama.png" width="49.5%" />
+  <img src="Projeto-Conceitual/eer_case.png" width="49.5%" />
+</p>
 
 <details>
   <summary>Recursos Utilizados no Modelo Conceitual</summary>
