@@ -8,7 +8,8 @@
 INSERT INTO PLANO (ID, NOME, TIPO) VALUES (1, 'Gratuito', 'PlanoGratuito');
 INSERT INTO PLANO (ID, NOME, TIPO, VALOR) VALUES (2, 'Básico', 'PlanoPago', 25.90);
 INSERT INTO PLANO (ID, NOME, TIPO, VALOR) VALUES (3, 'Padrão', 'PlanoPago', 39.90);
-INSERT INTO PLANO (ID, NOME, TIPO, VALOR) VALUES (4, 'Premium', 'PlanoPago', 450.00);
+INSERT INTO PLANO (ID, NOME, TIPO, VALOR) VALUES (4, 'Premium', 'PlanoPago', 50.00);
+INSERT INTO PLANO (ID, NOME, TIPO, VALOR) VALUES (5, 'PremiumPromocional', 'PlanoPago', 43.90);
 
 -- ==========================================
 -- 2.2. CONTA
@@ -94,6 +95,27 @@ VALUES (7, 'Dinastia de Fogo', 'Guerra entre clãs por poder.', '18 Anos', TO_DA
 INSERT INTO CONTEUDO (ID, TITULO, DESCRICAO, CLASSIFICACAO, DATA_LANCAMENTO) 
 VALUES (8, 'Rua do Medo', 'Misterios sobrenaturais na cidade.', '16 Anos', TO_DATE('2024-04-05', 'YYYY-MM-DD'));
 
+INSERT INTO CONTEUDO (ID, TITULO, DESCRICAO, CLASSIFICACAO, DATA_LANCAMENTO) 
+VALUES (9, 'O Mistério da Ilha Verde', 'Animação sobre animais que salvam sua floresta.', 'Livre', TO_DATE('2024-06-12', 'YYYY-MM-DD'));
+
+INSERT INTO CONTEUDO (ID, TITULO, DESCRICAO, CLASSIFICACAO, DATA_LANCAMENTO) 
+VALUES (10, 'Chefes do Futuro', 'Reality show de culinária com jovens talentos.', 'Livre', TO_DATE('2024-08-19', 'YYYY-MM-DD'));
+
+INSERT INTO CONTEUDO (ID, TITULO, DESCRICAO, CLASSIFICACAO, DATA_LANCAMENTO) 
+VALUES (11, 'Sussurros na Escuridão', 'Investigadores tentam desvendar crimes em uma cidade isolada.', '16 Anos', TO_DATE('2024-10-31', 'YYYY-MM-DD'));
+
+INSERT INTO CONTEUDO (ID, TITULO, DESCRICAO, CLASSIFICACAO, DATA_LANCAMENTO) 
+VALUES (12, 'Código de Conduta', 'Um thriller psicológico sobre espionagem corporativa.', '16 Anos', TO_DATE('2025-01-20', 'YYYY-MM-DD'));
+
+INSERT INTO CONTEUDO (ID, TITULO, DESCRICAO, CLASSIFICACAO, DATA_LANCAMENTO) 
+VALUES (13, 'Aventuras no Espaço Cloro', 'Documentário divertido sobre a vida marinha.', 'Livre', TO_DATE('2025-03-05', 'YYYY-MM-DD'));
+
+INSERT INTO CONTEUDO (ID, TITULO, DESCRICAO, CLASSIFICACAO, DATA_LANCAMENTO) 
+VALUES (14, 'O Mistério da Floresta Verde', 'Uma animação encantadora para toda a família.', 'Livre', TO_DATE('2026-06-24', 'YYYY-MM-DD'));
+
+INSERT INTO CONTEUDO (ID, TITULO, DESCRICAO, CLASSIFICACAO, DATA_LANCAMENTO) 
+VALUES (15, 'O Mistério da Floresta Amarela', 'Uma animação encantadora para toda a família.', 'Livre', TO_DATE('2026-06-24', 'YYYY-MM-DD'));
+
 -- ==========================================
 -- 2.7. CATEGORIAS
 -- ==========================================
@@ -129,6 +151,10 @@ INSERT INTO VIDEO (ID, DURACAO, URL) VALUES (205, 58, 'http://stream.com/vid/205
 INSERT INTO VIDEO (ID, DURACAO, URL) VALUES (206, 42, 'http://stream.com/vid/206');
 INSERT INTO VIDEO (ID, DURACAO, URL) VALUES (207, 45, 'http://stream.com/vid/207');
 
+-- Vídeos sem Filme ou Série
+INSERT INTO VIDEO (ID, DURACAO, URL) VALUES (208, 45, 'http://stream.com/vid/208');
+INSERT INTO VIDEO (ID, DURACAO, URL) VALUES (209, 45, 'http://stream.com/vid/209');
+
 -- ==========================================
 -- 2.9. FILME
 -- ==========================================
@@ -136,6 +162,11 @@ INSERT INTO FILME (ID_CONTEUDO, ID_VIDEO) VALUES (1, 101);
 INSERT INTO FILME (ID_CONTEUDO, ID_VIDEO) VALUES (2, 102);
 INSERT INTO FILME (ID_CONTEUDO, ID_VIDEO) VALUES (5, 103);
 INSERT INTO FILME (ID_CONTEUDO, ID_VIDEO) VALUES (6, 104);
+INSERT INTO FILME (ID_CONTEUDO, ID_VIDEO) VALUES (9, 105);
+INSERT INTO FILME (ID_CONTEUDO, ID_VIDEO) VALUES (12, 106);
+INSERT INTO FILME (ID_CONTEUDO, ID_VIDEO) VALUES (13, 107);
+INSERT INTO FILME (ID_CONTEUDO, ID_VIDEO) VALUES (14);
+INSERT INTO FILME (ID_CONTEUDO, ID_VIDEO) VALUES (15);
 
 -- ==========================================
 -- 2.10. SERIE
@@ -144,6 +175,8 @@ INSERT INTO SERIE (ID_CONTEUDO) VALUES (3);
 INSERT INTO SERIE (ID_CONTEUDO) VALUES (4);
 INSERT INTO SERIE (ID_CONTEUDO) VALUES (7);
 INSERT INTO SERIE (ID_CONTEUDO) VALUES (8);
+INSERT INTO SERIE (ID_CONTEUDO) VALUES (10);
+INSERT INTO SERIE (ID_CONTEUDO) VALUES (11);
 
 -- ==========================================
 -- 2.11. EPISODIO
@@ -202,6 +235,7 @@ INSERT INTO ELENCO (ID_CONTEUDO, CPF) VALUES (3, '222.222.222-22'); -- Coisas Es
 INSERT INTO ELENCO (ID_CONTEUDO, CPF) VALUES (5, '444.444.444-44'); -- A Última Missão
 INSERT INTO ELENCO (ID_CONTEUDO, CPF) VALUES (6, '555.555.555-55'); -- Rindo à Toa
 INSERT INTO ELENCO (ID_CONTEUDO, CPF) VALUES (7, '666.666.666-66'); -- Dinastia de Fogo
+INSERT INTO ELENCO (ID_CONTEUDO, CPF) VALUES (4, '666.666.666-66'); 
 
 -- ==========================================
 -- 2.15. INTERPRETA
@@ -251,5 +285,3 @@ VALUES ('julia.rocha@email.com', 'Julia', 6, 'TV_JULIA_SALA', TO_DATE('2024-02-0
 -- Visitante (Julia)
 INSERT INTO ASSISTE (EMAIL, NOME, ID_CONTEUDO, NUM_SERIE, DATA_ACESSO) 
 VALUES ('julia.rocha@email.com', 'Visitante', 5, 'TV_JULIA_SALA', TO_DATE('2024-02-07', 'YYYY-MM-DD'));
-
-COMMIT;
