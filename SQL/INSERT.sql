@@ -5,28 +5,33 @@
 -- ==========================================
 -- 2.1. PLANO
 -- ==========================================
-INSERT INTO PLANO (ID, NOME, TIPO, VALOR) VALUES (1, 'Básico', 'Mensal', 25.90);
-INSERT INTO PLANO (ID, NOME, TIPO, VALOR) VALUES (2, 'Padrão', 'Mensal', 39.90);
-INSERT INTO PLANO (ID, NOME, TIPO, VALOR) VALUES (3, 'Premium', 'Anual', 450.00);
+INSERT INTO PLANO (ID, NOME, TIPO) VALUES (1, 'Gratuito', 'PlanoGratuito');
+INSERT INTO PLANO (ID, NOME, TIPO, VALOR) VALUES (2, 'Básico', 'PlanoPago', 25.90);
+INSERT INTO PLANO (ID, NOME, TIPO, VALOR) VALUES (3, 'Padrão', 'PlanoPago', 39.90);
+INSERT INTO PLANO (ID, NOME, TIPO, VALOR) VALUES (4, 'Premium', 'PlanoPago', 450.00);
 
 -- ==========================================
 -- 2.2. CONTA
 -- ==========================================
-INSERT INTO CONTA (EMAIL, NOME, SENHA, CARTAO_NUMERO, CARTAO_NOME, CARTAO_VALIDADE, CARTAO_BANDEIRA, ID_PLANO) 
-VALUES ('marcos.silva@email.com', 'Marcos Silva', 'senha123', '1111222233334444', 'MARCOS A SILVA', TO_DATE('2028-10-01', 'YYYY-MM-DD'), 'Visa', 3);
+INSERT INTO CONTA (EMAIL, NOME, SENHA, ID_PLANO) 
+VALUES ('miriam.mendes@email.com', 'Miriam Silva', 'senha123', 1);
 
 INSERT INTO CONTA (EMAIL, NOME, SENHA, CARTAO_NUMERO, CARTAO_NOME, CARTAO_VALIDADE, CARTAO_BANDEIRA, ID_PLANO) 
-VALUES ('ana.souza@email.com', 'Ana Souza', 'qwerty', '5555666677778888', 'ANA L SOUZA', TO_DATE('2025-12-01', 'YYYY-MM-DD'), 'Mastercard', 1);
+VALUES ('marcos.silva@email.com', 'Marcos Silva', 'senha123', '1111222233334444', 'MARCOS A SILVA', TO_DATE('2028-10-01', 'YYYY-MM-DD'), 'Visa', 4);
 
 INSERT INTO CONTA (EMAIL, NOME, SENHA, CARTAO_NUMERO, CARTAO_NOME, CARTAO_VALIDADE, CARTAO_BANDEIRA, ID_PLANO) 
-VALUES ('carlos.mendes@email.com', 'Carlos Mendes', 'senha_carlos', '9999888877776666', 'CARLOS MENDES', TO_DATE('2029-05-01', 'YYYY-MM-DD'), 'Amex', 2);
+VALUES ('ana.souza@email.com', 'Ana Souza', 'qwerty', '5555666677778888', 'ANA L SOUZA', TO_DATE('2025-12-01', 'YYYY-MM-DD'), 'Mastercard', 2);
 
 INSERT INTO CONTA (EMAIL, NOME, SENHA, CARTAO_NUMERO, CARTAO_NOME, CARTAO_VALIDADE, CARTAO_BANDEIRA, ID_PLANO) 
-VALUES ('julia.rocha@email.com', 'Julia Rocha', 'ju_rocha123', '4444555566667777', 'JULIA ROCHA', TO_DATE('2027-08-01', 'YYYY-MM-DD'), 'Mastercard', 3);
+VALUES ('carlos.mendes@email.com', 'Carlos Mendes', 'senha_carlos', '9999888877776666', 'CARLOS MENDES', TO_DATE('2029-05-01', 'YYYY-MM-DD'), 'Amex', 3);
+
+INSERT INTO CONTA (EMAIL, NOME, SENHA, CARTAO_NUMERO, CARTAO_NOME, CARTAO_VALIDADE, CARTAO_BANDEIRA, ID_PLANO) 
+VALUES ('julia.rocha@email.com', 'Julia Rocha', 'ju_rocha123', '4444555566667777', 'JULIA ROCHA', TO_DATE('2027-08-01', 'YYYY-MM-DD'), 'Mastercard', 4);
 
 -- ==========================================
 -- 2.3. DISPOSITIVO
 -- ==========================================
+INSERT INTO DISPOSITIVO (NUM_SERIE, MODELO, EMAIL) VALUES ('IPHONE15', 'iPhone 15', 'miriam.mendes@email.com');
 INSERT INTO DISPOSITIVO (NUM_SERIE, MODELO, EMAIL) VALUES ('SN12345TV', 'Smart TV Samsung', 'marcos.silva@email.com');
 INSERT INTO DISPOSITIVO (NUM_SERIE, MODELO, EMAIL) VALUES ('IPHONE13X', 'iPhone 13 Pro', 'marcos.silva@email.com');
 INSERT INTO DISPOSITIVO (NUM_SERIE, MODELO, EMAIL) VALUES ('TAB9990A', 'Galaxy Tab S7', 'ana.souza@email.com');
